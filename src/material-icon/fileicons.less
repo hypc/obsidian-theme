@@ -1,0 +1,60 @@
+@file-extensions: {
+  audio: mp3, flac, m4a, wma, aiff;
+  css: css;
+  database: pdb, sql, pks, pkb, accdb, mdb, sqlite, pgsql, postgres, psql;
+  docker: dockerignore, dockerfile;
+  go: go;
+  html: html, htm, xhtml, html_vm, asp;
+  image: png, jpeg, jpg, gif, ico, tif, tiff, psd, psb, ami, apx, bmp, bpg, brk, cur, dds, dng, exr, fpx, gbr, img, jbig2, jb2, jng, jxr, pbm, pgf, pic, raw, webp, eps;
+  java: java, jar, jsp;
+  javascript: js, esx, mjs;
+  json: json, tsbuildinfo;
+  less: less;
+  pdf: pdf;
+  perl: pl, pm;
+  php: php;
+  powerpoint: pptx, ppt, pptm, potx, potm, ppsx, ppsm, pps, ppam, ppa;
+  python: py;
+  sass: scss, sass;
+  svg: svg;
+  swift: swift;
+  table: xlsx, xls, csv, tsv;
+  typescript: ts;
+  typescript-def: "d.ts";
+  video: webm, mkv, flv, vob, ogv, ogg, gifv, avi, mov, qt, wmv, yuv, rm, rmvb, mp4, m4v, mpg, mp2, mpeg, mpe, mpv, m2v;
+  word: doc, docx, rtf;
+  xml: xml, plist, xsd, dtd, xsl, xslt, resx, iml, xquery, tmLanguage, manifest, project;
+  yaml: yaml, YAML-tmLanguage, yml;
+  zip: zip, tar, gz, xz, bzip2, gzip, "7z", rar, tgz;
+
+  markdown: md, markdown, rst;
+  excalidraw: excalidraw, "excalidraw.md";
+  template: "tpl.md", "template.md";
+}
+
+
+.nav-folder {
+  .nav-file-title {
+    line-height: @nav-title-size;
+
+    &:before {
+      content: "";
+      background-size: @nav-icon-size;
+      padding-left: @nav-icon-size;
+      background-repeat: no-repeat;
+    }
+
+    .nav-file-tag {
+      display: none; // hide build-in nav tag
+    }
+
+    each(@file-extensions, .(@extensions, @file) {
+      --material-@{file}-icon: data-uri("./icons/@{file}.svg");
+      each(@extensions, .(@extension) {
+        &[data-path$=".@{extension}"]:before {
+          background-image: var(~"--material-@{file}-icon");
+        }
+      });
+    });
+  }
+}

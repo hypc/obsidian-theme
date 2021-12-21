@@ -1,0 +1,68 @@
+g.classGroup {
+  text {
+    fill: @nodeBorder;
+    stroke: none;
+    font-size: 10px;
+
+    .title {
+      font-weight: bolder;
+    }
+  }
+
+  rect {
+    fill: @nodeBkg;
+    stroke: @nodeBorder;
+  }
+
+  line {
+    stroke: @nodeBorder;
+    stroke-width: 1;
+  }
+}
+
+.divider {
+  stroke: @nodeBorder;
+  stroke-width: 1;
+}
+
+g.clickable {
+  cursor: pointer;
+}
+
+.classLabel {
+  .box {
+    stroke: none;
+    stroke-width: 0;
+    fill: @nodeBkg;
+    opacity: 0.5;
+  }
+
+  .label {
+    fill: @nodeBorder;
+    font-size: 10px;
+  }
+}
+
+.relation {
+  stroke: @nodeBorder;
+  stroke-width: 1;
+  fill: none;
+}
+
+.dashed-line {
+  stroke-dasharray: 3;
+}
+
+#compositionStart, #compositionEnd, .composition,
+#dependencyStart, #dependencyEnd, .dependency,
+#extensionStart, #extensionEnd, .extension {
+  fill: @nodeBorder !important;
+  stroke: @nodeBorder !important;
+  stroke-width: 1;
+}
+
+#aggregationStart, #aggregationEnd, .aggregation {
+  fill: @nodeBkg !important;
+  stroke: @nodeBorder !important;
+  stroke-width: 1;
+}

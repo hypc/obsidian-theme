@@ -1,6 +1,15 @@
 {
   "name": "obsidian-theme",
   "version": "0.0.1",
+  "description": "custom obsidian theme.",
+  "author": {
+    "name": "hypc",
+    "url": "https://github.com/hypc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypc/obsidian-theme.git"
+  },
   "main": "src/theme.less",
   "license": "MIT",
   "private": true,
@@ -11,7 +20,6 @@
   "devDependencies": {
     "del": "^6.0.0",
     "gulp": "^4.0.2",
-    "gulp-less": "^5.0.0",
-    "material-icon-theme": "https://github.com/PKief/vscode-material-icon-theme"
+    "gulp-less": "^5.0.0"
   }
 }

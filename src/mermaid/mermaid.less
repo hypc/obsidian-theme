@@ -1,0 +1,50 @@
+@import "class";
+@import "flowchart";
+@import "gantt";
+@import "git";
+@import "pie";
+@import "sequence";
+@import "state";
+@import "er";
+@import "requirement";
+
+.error-icon {
+  fill: @errorBkgColor;
+}
+
+.error-text {
+  fill: @errorTextColor;
+  stroke: @errorTextColor;
+}
+
+.edge-thickness-normal {
+  stroke-width: 2px;
+}
+
+.edge-thickness-thick {
+  stroke-width: 3.5px
+}
+
+.edge-pattern-solid {
+  stroke-dasharray: 0;
+}
+
+.edge-pattern-dashed {
+  stroke-dasharray: 3;
+}
+
+.edge-pattern-dotted {
+  stroke-dasharray: 2;
+}
+
+.marker {
+  fill: @lineColor;
+}
+
+.marker.cross {
+  stroke: @lineColor;
+}
+
+svg {
+  font-size: 24px;
+}

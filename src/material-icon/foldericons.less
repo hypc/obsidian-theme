@@ -1,0 +1,45 @@
+@folder-names: {
+  folder-archive: archive, archives, archival, backup, backups, back-up, back-ups;
+  folder-audio: audio, audios, music, musics, sound, sounds;
+  folder-images: images, image, img, icons, icon, ico, screenshot, screenshots, picture, pictures;
+  folder-lib: lib, libs, library, libraries, vendor, vendors, third-party;
+  folder-plugin: plugin, plugins, _plugins, extension, extensions, addon, addons, module, modules;
+  folder-resource: resource, resources, res, asset, assets, static, report, reports;
+  folder-template: templates, template;
+  folder-utils: util, utils, utility, utilities;
+  folder-video: video, videos, movie, movies;
+}
+
+.nav-folder {
+  .nav-folder-title {
+    line-height: @nav-title-size;
+  }
+
+  .nav-folder-title-content:before {
+    content: "";
+    background-size: @nav-icon-size;
+    padding-left: @nav-icon-size + 5px;
+    background-repeat: no-repeat;
+  }
+
+  .nav-folder-title-content:before {
+    background-image: data-uri("./icons/folder-base-open.svg");
+  }
+
+  &.is-collapsed .nav-folder-title-content:before {
+    background-image: data-uri("./icons/folder-base.svg");
+  }
+
+  each(@folder-names, .(@names, @folder) {
+    --material-@{folder}-icon: data-uri("./icons/@{folder}.svg");
+    --material-@{folder}-open-icon: data-uri("./icons/@{folder}-open.svg");
+    each(@names, .(@name) {
+      .nav-folder-title[data-path$="/@{name}"] .nav-folder-title-content:before {
+        background-image: var(~"--material-@{folder}-open-icon");
+      }
+      &.is-collapsed .nav-folder-title[data-path$="/@{name}"] .nav-folder-title-content:before {
+        background-image: var(~"--material-@{folder}-icon");
+      }
+    });
+  });
+}

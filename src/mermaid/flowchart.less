@@ -1,0 +1,77 @@
+.label {
+  fill: @titleColor;
+  color: @titleColor;
+
+  text {
+    fill: @titleColor;
+  }
+}
+
+.node {
+  &.clickable {
+    cursor: pointer;
+  }
+
+  rect, circle, ellipse, polygon, path {
+    fill: @mainBkg;
+    stroke: @nodeBorder;
+    stroke-width: 1px;
+  }
+
+  .label {
+    text-align: center;
+    fill: @titleColor;
+  }
+}
+
+.arrowheadPath {
+  fill: @arrowheadColor;
+}
+
+.edgePath .path {
+  stroke: @lineColor;
+  stroke-width: 1.5px;
+}
+
+.flowchart-link {
+  stroke: @lineColor;
+  fill: none;
+}
+
+.edgeLabel {
+  background-color: @edgeLabelBackground;
+  text-align: center;
+
+  rect {
+    opacity: 0.9;
+  }
+
+  span {
+    color: @edgeLabelcolor;
+  }
+}
+
+.cluster {
+  rect {
+    fill: @secondBkg;
+    stroke: @clusterBorder;
+    stroke-width: 1px;
+  }
+
+  text {
+    fill: @titleColor;
+  }
+}
+
+div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-size: 12px;
+  background: @secondBkg;
+  border: 1px solid @border2;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100;
+}
