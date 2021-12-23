@@ -31,7 +31,9 @@
   excalidraw: excalidraw, "excalidraw.md";
   template: "tpl.md", "template.md";
 }
-
+@file-icons: {
+  @excalidraw: data-uri('./icons/excalidraw.png');
+}
 
 .nav-folder {
   .nav-file-title {
@@ -49,7 +51,7 @@
     }
 
     each(@file-extensions, .(@extensions, @file) {
-      --material-@{file}-icon: data-uri("./icons/@{file}.svg");
+      --material-@{file}-icon: if(isdefined(@file-icons[@@file]), @file-icons[@@file], data-uri("./icons/@{file}.svg"));
       each(@extensions, .(@extension) {
         &[data-path$=".@{extension}"]:before {
           background-image: var(~"--material-@{file}-icon");
