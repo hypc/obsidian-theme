@@ -2,18 +2,19 @@
   table.dataview.table-view-table {
     tbody {
       tr {
+        background-color: var(--background-primary);
         border-bottom: 1px solid LightGray;
 
         &:nth-child(2n) {
-          background-color: WhiteSmoke;
+          filter: invert(5%);
         }
 
         &:last-child {
-          border-bottom: 3px solid Black;
+          border-bottom: 3px solid var(--text-normal);
         }
 
         &:hover {
-          background-color: Azure;
+          filter: invert(15%);
         }
 
         td {
