@@ -5,7 +5,7 @@
 build with yarn:
 
 ```bash
-foo@bar:~/obsidian-theme yarn install
+foo@bar:~/obsidian-theme$ yarn install
 foo@bar:~/obsidian-theme$ yarn build
 ```
 
