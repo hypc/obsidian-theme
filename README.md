@@ -34,4 +34,4 @@ finally, enable the custom css snippet.
 
 ## License
 
-[MIT](https://github.com/hypc/obsidian-badgen/blob/master/LICENSE) © hypc
+[MIT](https://github.com/hypc/obsidian-theme/blob/master/LICENSE) © hypc
