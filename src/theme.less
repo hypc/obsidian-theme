@@ -1,7 +1,6 @@
 @import "material-icon/themes/default";
 @import "dataview/dataview";
 @import "mermaid/themes/default";
-@import "banner/banner";
 
 // remove nesting content max-height limit
 .markdown-preview-view .markdown-embed-content {
@@ -23,4 +22,19 @@
 
 .HyperMD-codeblock.cm-line, code {
   white-space: pre !important;
+}
+
+.dataview {
+  &.inline-field-key {
+    padding-left: 6px;
+    padding-right: 2px;
+    background-color: burlywood;
+    border-radius: 5px 0 0 5px;
+  }
+  &.inline-field-value {
+    padding-left: 2px;
+    padding-right: 6px;
+    background-color: bisque;
+    border-radius: 0 5px 5px 0;
+  }
 }
