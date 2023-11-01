@@ -13,10 +13,11 @@
 .nav-folder {
   .nav-folder-title-content:before {
     content: "";
-    height: @nav-icon-size;
-    background-size: @nav-icon-size;
-    padding-left: @nav-icon-size + 5px;
+    height: var(--nav-item-size);
+    line-height: var(--line-height-tight);
+    padding-left: calc(var(--nav-item-size) + 5px);
     background-repeat: no-repeat;
+    background-size: contain;
   }
 
   .nav-folder-title-content:before {

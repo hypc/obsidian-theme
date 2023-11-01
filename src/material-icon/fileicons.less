@@ -37,18 +37,16 @@
   search: "search.md";
   template: "tpl.md", "template.md";
 }
-@file-icons: {
-  @excalidraw: data-uri('./icons/excalidraw.png');
-}
 
 .nav-folder {
   .nav-file-title {
     &:before {
       content: "";
-      height: @nav-icon-size;
-      background-size: @nav-icon-size;
-      padding-left: @nav-icon-size + 5px;
+      height: var(--nav-item-size);
+      line-height: var(--line-height-tight);
+      padding-left: calc(var(--nav-item-size) + 5px);
       background-repeat: no-repeat;
+      background-size: contain;
     }
 
     .nav-file-tag {
