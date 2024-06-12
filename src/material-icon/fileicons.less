@@ -1,4 +1,12 @@
 @file-extensions: {
+  markdown: md, markdown, rst;
+  drawio: drawio, "drawio.md";
+  excalidraw: excalidraw, "excalidraw.md";
+  kanban: "kanban.md", "kb.md";
+  readme: "readme.md";
+  search: "search.md";
+  template: "tpl.md", "template.md";
+
   audio: mp3, flac, m4a, wma, aiff;
   css: css;
   canvas: canvas;
@@ -20,7 +28,7 @@
   sass: scss, sass;
   svg: svg;
   swift: swift;
-  table: xlsx, xls, csv, tsv;
+  table: xlsx, xls, csv, tsv, "sheet.md";
   typescript: ts;
   typescript-def: "d.ts";
   video: webm, mkv, flv, vob, ogv, ogg, gifv, avi, mov, qt, wmv, yuv, rm, rmvb, mp4, m4v, mpg, mp2, mpeg, mpe, mpv, m2v;
@@ -28,14 +36,6 @@
   xml: xml, plist, xsd, dtd, xsl, xslt, resx, iml, xquery, tmLanguage, manifest, project;
   yaml: yaml, YAML-tmLanguage, yml;
   zip: zip, tar, gz, xz, bzip2, gzip, "7z", rar, tgz;
-
-  markdown: md, markdown, rst;
-  drawio: drawio, "drawio.md";
-  excalidraw: excalidraw, "excalidraw.md";
-  kanban: "kanban.md", "kb.md";
-  readme: "readme.md";
-  search: "search.md";
-  template: "tpl.md", "template.md";
 }
 
 .nav-folder {
@@ -51,6 +51,13 @@
 
     .nav-file-tag {
       display: none; // hide build-in nav tag
+    }
+
+    .nav-file-title-content {
+      white-space: nowrap !important;
+    }
+    .nav-file-title-content:before {
+      content: unset !important;
     }
 
     each(@file-extensions, .(@extensions, @file) {
